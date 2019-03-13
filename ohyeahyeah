@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #232323;
+}
+    ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+
+div {
+  height: 250px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+p {
+  
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<ul>
+      <li><button onclick=mansions()>Mansions</button></li>
+      <li><button onclick=houses()>Houses</button></li>
+      <li><button onclick=skyscraper()>Skyscrapers</button></li>
+    </ul>
+    
+
+<h1>BIGBO ESTATES</h1>
+<h2>Presented by columbine enterprises 
+</h2>
+
+<div id="mansions"> </div>
+
+<script>
+mansionsImages = [
+  'url("https://vignette.wikia.nocookie.net/shrek/images/5/58/Fc19d7db9cbcb7659aae3dce7bf6b3c1.jpg/revision/latest?cb=20170129025042")',
+	'url("http://minecrafthub.com/image/share/2177_585e35ee39d0a.png			")',
+	'url("https://vignette.wikia.nocookie.net/knd/images/9/94/Sector_V_Treehouse.jpg/revision/latest?cb=20170305002602			")',
+
+  
+]
+
+housesImages = [
+				'url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/5167f02a-0845-4e2c-8751-b8f57404bf91/d9xy3f4-75134ce9-6064-44cc-a7a6-b0335ffa010f.jpg/v1/fill/w_1024,h_658,q_70,strp/cartoon_network_city___ben_10_rust_bucket_by_cn_world_d9xy3f4-fullview.jpg			")',
+				'url("https://lh3.googleusercontent.com/WbkU1fx_WQCzdG7Yik7SnhfEFQlRIKSoWeoK34_9JnTJIyvVZCNJNr81Ege8rLBalx1vUg_jGDhM9fdJQSE=h1264-rw			")',
+				'url("http://www.cubebreaker.com/wp-content/uploads/2014/03/simpsons-cartoon.jpg")',
+		]
+skyscrapersImages = [
+				'url("https://t4.rbxcdn.com/a3184dff9a32d389fa8e0b968b3f7f0f")',
+				'url("https://vignette.wikia.nocookie.net/batman/images/a/a9/Wayne_Manor_2.jpg/revision/latest?cb=20120801235608")',
+				'url("https://i0.wp.com/www.futuristarchitecture.com/wp-content/uploads/2015/11/The-Avengers-Tower-in-comic-books.jpg?fit=1000%2C562&ssl=1")',
+		]
+
+
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+  
+  function mansions() {
+   mansion = document.getElementById("mansions")
+  mansion.innerHTML = ''
+	mansion.innerHTML += mansionsDivs[0]
+  mansion.innerHTML += mansionsDivs[1]
+  mansion.innerHTML += mansionsDivs[2]
+
+	//alert("YO")
+	items = document.getElementsByClassName("item")
+    items[0].style.background = mansionsImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = mansionsImages[1]
+    items[2].style.background = mansionsImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+
+} 
+function houses() {
+	//alert("YO")
+	items = document.getElementsByClassName("item")
+    items[0].style.background = housesImages[0]
+    items[1].style.background = housesImages[1]
+    items[2].style.background = housesImages[2]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.backgroundSize = '100% 100%'
+
+}
+function skyscraper() {
+	//alert("YO")
+	items = document.getElementsByClassName("item")
+    items[0].style.background = skyscrapersImages[0]
+    items[1].style.background = skyscrapersImages[1]
+    items[2].style.background = skyscrapersImages[2]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.backgroundSize = '100% 100%'
+    items[2].style.backgroundSize = '100% 100%'
+}
+mansionsDivs = [
+  '<div class="item"><p>MA SWAMP <span class="price">$128603000</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>Mansion <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p> <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+
+
+	]
+
+
+</script>
+
+
+
+
+
+</body>
+ 
